@@ -4,11 +4,38 @@
              xmlns:local="clr-namespace:MRQ"
              x:Class="MRQ.App">
     <Application.Resources>
+
+        <!--<ResourceDictionary>
+            <Style TargetType="TabBar">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#092327" />
+                --><!-- Dark blue --><!--
+                <Setter Property="Shell.TabBarForegroundColor" Value="#FFFFFF" />
+                --><!-- White for foreground items --><!--
+                <Setter Property="Shell.TabBarTitleColor" Value="#FFFFFF" />
+                --><!-- White for active tab titles --><!--
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#9bd5d4" />
+                --><!-- Pale blue for unselected items --><!--
+            </Style>
+        </ResourceDictionary>-->
+        
         <ResourceDictionary>
+
+            <Color x:Key="DarkBlue">#092327</Color>
+            <Color x:Key="Blue">#0b5351</Color>
+            <Color x:Key="LightBlue">#00a9a5</Color>
+            <Color x:Key="PaleBlue">#9bd5d4</Color>
+            <Color x:Key="Red">#f33f1a</Color>
+            <Color x:Key="Orange">#f37d0e</Color>
+            <Color x:Key="Green">#78a300</Color>
+            <Color x:Key="Purple">#5b4fb4</Color>
+            <Color x:Key="Yellow">#ffa600</Color>
+            <Color x:Key="LightGrey">#bbbbbb</Color>
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+                
     </Application.Resources>
 </Application>

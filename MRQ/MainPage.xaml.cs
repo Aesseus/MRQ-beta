@@ -4,6 +4,8 @@ using Microcharts.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Layouts;
 using System.Diagnostics;
+using MRQ.Controls;
+using MRQ.ViewModels;
 
 namespace MRQ
 {
@@ -14,6 +16,7 @@ namespace MRQ
         public MainPage()
         {
             InitializeComponent();
+            this.BindingContext = new MainPageViewModel();
             Shell.SetNavBarIsVisible(this, false);
             this.BackgroundColor = Color.FromArgb("#9bd5d4");
             BuildUI();
@@ -51,15 +54,13 @@ namespace MRQ
 
         private void AddSettingsIcon(Grid grid)
         {
-            var settingsButton = new ImageButton
+            var settingsButton = new CustomImageButton
             {
-                Source = "settings.png", // Ensure image path is correct
+                Source = "settings.svg", // Ensure image path is correct
                 Aspect = Aspect.AspectFit,
                 HorizontalOptions = LayoutOptions.End,
                 VerticalOptions = LayoutOptions.Center
             };
-            settingsButton.Pressed += OnButtonPressed;
-            settingsButton.Released += OnButtonReleased;
 
             var settingsFrame = new Frame
             {
@@ -113,10 +114,10 @@ namespace MRQ
                 Text = "Review expenses",
                 HeightRequest = buttonSize,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Center
+                HorizontalOptions = LayoutOptions.Center,
+                Command = ((MainPageViewModel)this.BindingContext).ReviewExpensesCommand // Binding the command
+
             };
-            reviewButton.Pressed += OnButtonPressed;
-            reviewButton.Released += OnButtonReleased;
             grid.Children.Add(reviewButton);
             Grid.SetRow(reviewButton, 2);
         }
@@ -182,9 +183,9 @@ namespace MRQ
             Grid.SetRow(bottomNavGrid, 4);
         }
 
-        private ImageButton CreateNavButton(string imageSource)
+        private CustomImageButton CreateNavButton(string imageSource)
         {
-            var button = new ImageButton
+            return new CustomImageButton
             {
                 Source = imageSource,
                 WidthRequest = buttonSize,
@@ -192,27 +193,7 @@ namespace MRQ
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.Center
             };
-            button.Pressed += OnButtonPressed;
-            button.Released += OnButtonReleased;
-            return button;
-        }
-
-        private async void OnButtonPressed(object? sender, EventArgs e)
-        {
-            if (sender is ImageButton button)
-            {
-                await button.ScaleTo(0.8, 50, Easing.CubicOut);
-                Debug.WriteLine("Button Pressed: Animation to scale 0.8 completed");
-            }
-        }
-
-        private async void OnButtonReleased(object? sender, EventArgs e)
-        {
-            if (sender is ImageButton button)
-            {
-                await button.ScaleTo(1.0, 50, Easing.CubicIn);
-                Debug.WriteLine("Button Released: Animation to scale 1.0 completed");
-            }
-        }
+            
+        }        
     }
 }

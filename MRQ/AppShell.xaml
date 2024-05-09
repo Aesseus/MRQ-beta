@@ -3,13 +3,21 @@
     x:Class="MRQ.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MRQ.Pages"
     xmlns:local="clr-namespace:MRQ"
     Shell.FlyoutBehavior="Disabled"
     Title="MRQ">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent Title ="Home" Icon="settings.svg" Route="mainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent Route="expensesPage" ContentTemplate="{DataTemplate pages:ExpensesPage}" />
+    </TabBar>
+
+
+    <TabBar>
+        <ShellContent Title="Calculate" Icon="calculator.svg" Route="calculatePage" ContentTemplate="{DataTemplate pages:CalculatePage}" />
+        <ShellContent Title="Reduce" Icon="reduce.svg" Route="reducePage" ContentTemplate="{DataTemplate pages:ReducePage}" />
+        <ShellContent Title="Offset" Icon="offset.svg" Route="offsetPage" ContentTemplate="{DataTemplate pages:OffsetPage}" />
+    </TabBar>
 
 </Shell>
