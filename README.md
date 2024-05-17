@@ -1,10 +1,10 @@
 # .NET MAUI Project
 
-This is a .NET Multi-platform App UI (MAUI) project built for Android, iOS, and Windows platforms. The application aims to provide a user-friendly interface for tracking emissions, calculating offsets, and visualizing data through interactive charts.
+This is a .NET Multi-platform App UI (MAUI) project built for Android, iOS, and Windows platforms. The application aims to provide a user-friendly interface for tracking emissions, calculating offsets, and visualising data through interactive charts.
 
 ## Project Description
 
-This app is designed to help individuals and businesses track their carbon emissions and calculate offsets to reduce their environmental impact. By providing a user-friendly interface and powerful data visualization tools, the app makes it easy for users to understand their carbon footprint and take action to reduce it.
+This app is designed to help individuals and businesses track their carbon emissions and calculate offsets to reduce their environmental impact. By providing a user-friendly interface and powerful data visualisation tools, the app makes it easy for users to understand their carbon footprint and take action to reduce it.
 
 ## Tech Stack
 
