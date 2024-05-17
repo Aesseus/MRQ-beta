@@ -2,6 +2,10 @@
 
 This is a .NET Multi-platform App UI (MAUI) project built for Android, iOS, and Windows platforms. The application aims to provide a user-friendly interface for tracking emissions, calculating offsets, and visualizing data through interactive charts.
 
+## Project Description
+
+This app is designed to help individuals and businesses track their carbon emissions and calculate offsets to reduce their environmental impact. By providing a user-friendly interface and powerful data visualization tools, the app makes it easy for users to understand their carbon footprint and take action to reduce it.
+
 ## Tech Stack
 
 - **.NET MAUI**: A cross-platform framework for building native mobile and desktop applications using C# and XAML.
@@ -10,53 +14,33 @@ This is a .NET Multi-platform App UI (MAUI) project built for Android, iOS, and 
 - **Microcharts**: A modern, cross-platform charting library for .NET MAUI and other .NET platforms.
 - **SkiaSharp**: A cross-platform 2D graphics library for rendering vector graphics, bitmaps, and PDFs.
 
-## Progress
+## Installation
 
-### Current Progress: UI Implementation
+To run this app locally, follow these steps:
 
-The project is currently in the UI implementation phase, focusing on creating an intuitive and visually appealing user interface. The main page features:
+1. Clone the repository: `git clone https://github.com/your-username/your-repository.git`
+2. Navigate to the project directory: `cd your-repository`
+3. Open the solution file in Visual Studio or Visual Studio Code
+4. Build and run the project on your desired platform
 
-- A settings icon in the top-right corner.
-- A donut chart in the center, displaying dummy data for now.
-- A "Review Expenses" button below the chart.
-- Labels showing the remaining emissions and purchased offsets.
-- A bottom navigation bar with icons for the Calculator, Reduce, and Offset pages.
+## Usage
 
-Here's a code snippet from the `MainPage.xaml.cs` file, demonstrating the UI construction:
+Once the app is running, you can:
 
-```csharp
-private void BuildUI()
-{
-    var grid = new Grid
-    {
-        // Grid row and column definitions
-        // ...
-    };
+- Track your carbon emissions by entering data about your activities and energy use
+- Calculate offsets by selecting from a list of offsetting projects
+- Visualize your data through interactive charts and graphs
 
-    AddSettingsIcon(grid);
-    AddDonutChart(grid);
-    AddReviewButton(grid);
-    AddLabels(grid);
-    AddNavigationBar(grid);
+## Contributing
 
-    Content = grid;
-}
-
-### Next Steps: Charting and Data Visualization
-The next phase of the project will focus on integrating the Microcharts library for creating interactive and visually appealing data visualizations. This will involve:
-
-Fetching and processing data from various sources (e.g., emissions data, expenses, calculations).
-Implementing custom chart types and configurations to effectively represent the data.
-Enabling user interactions with the charts, such as tooltips, zooming, and filtering.
-
-Contributing
 If you'd like to contribute to this project, please follow these steps:
 
-Fork the repository
-Create a new branch (git checkout -b feature/your-feature-name)
-Make your changes and commit them (git commit -am 'Add some feature')
-Push to the branch (git push origin feature/your-feature-name)
-Create a new Pull Request
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature-name`)
+3. Make your changes and commit them (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature-name`)
+5. Create a new Pull Request
 
-License
+## License
+
 This project is licensed under the MIT License.
