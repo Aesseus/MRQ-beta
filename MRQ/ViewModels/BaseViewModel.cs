@@ -32,7 +32,7 @@ namespace MRQ.ViewModels
         {
             get => _isBusy;
             set => SetProperty(ref _isBusy, value);
-        }
+        } 
 
         private string _title = string.Empty;
         public string Title

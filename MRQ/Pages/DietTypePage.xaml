@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MRQ.Pages.DietTypePage"
+             xmlns:viewmodels="clr-namespace:MRQ.ViewModels">
+    <ContentPage.BindingContext>
+        <viewmodels:DietTypeViewModel/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="How would you qualify your diet?" 
+               FontSize="24"
+               FontFamily="Robotto"              
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+
+        <Picker ItemsSource="{Binding DietTypes}"
+                FontFamily="Robotto"               
+                SelectedItem="{Binding SelectedDietType}"
+                Title="Select your diet type"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="CenterAndExpand">
+            <Picker.ItemDisplayBinding>
+                <Binding Path="." />
+            </Picker.ItemDisplayBinding>
+        </Picker>
+
+        <Button Text="Next"
+                FontFamily="Robotto"
+                Command="{Binding NextCommand}"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="0,0,0,20" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MRQ.Pages.FlightHoursPage"
+             xmlns:viewmodels="clr-namespace:MRQ.ViewModels"
+             Title="FlightHoursPage">
+    <ContentPage.BindingContext>
+        <viewmodels:FlightHoursViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="20">
+        <Label Text="How many hours of flight do you do a year?" FontSize="24" FontFamily="Roboto"/>
+        <Entry Text="{Binding FlightHours}" Keyboard="Numeric"/>
+
+        <Button Text="Next"
+        FontFamily="Robotto"
+        Command="{Binding NextCommand}"
+        HorizontalOptions="Center"
+        VerticalOptions="End"
+        Margin="0,0,0,20" />
+
+    </VerticalStackLayout>
+</ContentPage>

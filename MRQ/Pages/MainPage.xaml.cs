@@ -7,7 +7,7 @@ using System.Diagnostics;
 using MRQ.Controls;
 using MRQ.ViewModels;
 
-namespace MRQ
+namespace MRQ.Pages
 {
     public partial class MainPage : ContentPage
     {

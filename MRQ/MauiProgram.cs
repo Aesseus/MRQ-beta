@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microcharts.Maui;
+using MRQ.Pages;
+using MRQ.ViewModels;
 
 namespace MRQ
 {
@@ -15,10 +17,22 @@ namespace MRQ
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Roboto-Regular.ttf", "Roboto");
+                    fonts.AddFont("Roboto-Bold.ttf", "RobotoBold");
                 });
+            // Register your pages and view models
+            builder.Services.AddSingleton<DietTypePage>();
+            builder.Services.AddSingleton<DietTypeViewModel>();
+            builder.Services.AddSingleton<SustainableCommutePage>();
+            builder.Services.AddSingleton<SustainableCommuteViewModel>();
+            builder.Services.AddSingleton<FlightHoursPage>();
+            builder.Services.AddSingleton<FlightHoursViewModel>();
+            // Register your navigation routes
+            Routing.RegisterRoute(nameof(SustainableCommutePage), typeof(SustainableCommutePage));
+            Routing.RegisterRoute(nameof(FlightHoursPage), typeof(FlightHoursPage));
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
