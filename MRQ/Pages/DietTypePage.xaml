@@ -13,7 +13,7 @@
         <Label Text="Select your diet type"
                FontSize="24"
                FontAttributes="Bold"
-               TextColor="{StaticResource DarkGreen}"
+               TextColor="{StaticResource MidnightBlue}"
                HorizontalOptions="Center"
                Margin="0,20,0,10" />
 
@@ -23,8 +23,8 @@
                 SelectedItem="{Binding SelectedDietType}"
                 Title="Select your diet type"
                 TitleColor="{StaticResource LightGray}"
-                TextColor="{StaticResource Indigo}"
-                BackgroundColor="{StaticResource LightTurquoise}"
+                TextColor="{StaticResource Tertiary}"
+                BackgroundColor="{StaticResource Magenta}"
                 HorizontalTextAlignment="Center"
                 VerticalOptions="CenterAndExpand">
             <Picker.ItemDisplayBinding>
@@ -36,7 +36,7 @@
                 Text="Next"
                 FontFamily="Roboto"
                 Command="{Binding NextCommand}"
-                BackgroundColor="{StaticResource TealGreen}"
+                BackgroundColor="{StaticResource Secondary}"
                 TextColor="White"
                 FontSize="18"
                 Margin="20,10"
