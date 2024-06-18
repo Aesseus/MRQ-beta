@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 
 namespace MRQ.ViewModels
@@ -25,10 +27,22 @@ namespace MRQ.ViewModels
         };
 
         [RelayCommand]
-        private async Task NextCommand()
+        private async Task NextCommand() 
         {
-            // Navigate to the SustainableCommutePage
-            await Shell.Current.GoToAsync(nameof(SustainableCommutePage));
+            try 
+            {
+                Debug.WriteLine("NextCommand Executed");
+                // Navigate to the SustainableCommutePage
+                await Shell.Current.GoToAsync(nameof(SustainableCommutePage));
+            }
+            catch (Exception ex) 
+            {
+                Debug.WriteLine($"Navigation failed: {ex.Message}");
+            }
         }
+
+        // ... Rest of the code ...
+
     }
 }
+

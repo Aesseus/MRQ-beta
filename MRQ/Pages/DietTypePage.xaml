@@ -3,21 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MRQ.Pages.DietTypePage"
              xmlns:viewmodels="clr-namespace:MRQ.ViewModels">
-    <ContentPage.BindingContext>
-        <viewmodels:DietTypeViewModel/>
-    </ContentPage.BindingContext>
+     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-    <VerticalStackLayout Padding="20" Spacing="20">
-        <Label Text="How would you qualify your diet?" 
+        <Label Text="Select your diet type"
                FontSize="24"
-               FontFamily="Robotto"              
                FontAttributes="Bold"
-               HorizontalTextAlignment="Center" />
+               TextColor="{StaticResource DarkGreen}"
+               HorizontalOptions="Center"
+               Margin="0,20,0,10" />
 
-        <Picker ItemsSource="{Binding DietTypes}"
-                FontFamily="Robotto"               
+        <Picker Grid.Row="1"
+                ItemsSource="{Binding DietTypes}"
+                FontFamily="Roboto"               
                 SelectedItem="{Binding SelectedDietType}"
                 Title="Select your diet type"
+                TitleColor="{StaticResource LightGray}"
+                TextColor="{StaticResource Indigo}"
+                BackgroundColor="{StaticResource LightTurquoise}"
                 HorizontalTextAlignment="Center"
                 VerticalOptions="CenterAndExpand">
             <Picker.ItemDisplayBinding>
@@ -25,11 +32,16 @@
             </Picker.ItemDisplayBinding>
         </Picker>
 
-        <Button Text="Next"
-                FontFamily="Robotto"
+        <Button Grid.Row="2"
+                Text="Next"
+                FontFamily="Roboto"
                 Command="{Binding NextCommand}"
-                HorizontalOptions="Center"
-                VerticalOptions="End"
-                Margin="0,0,0,20" />
-    </VerticalStackLayout>
+                BackgroundColor="{StaticResource TealGreen}"
+                TextColor="White"
+                FontSize="18"
+                Margin="20,10"
+                CornerRadius="10"
+                HeightRequest="50"
+                VerticalOptions="End" />
+    </Grid>
 </ContentPage>

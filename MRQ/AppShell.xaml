@@ -7,6 +7,14 @@
     Shell.FlyoutBehavior="Disabled"
     Title="MRQ">
 
+    <ShellContent Route="DietTypePage"
+                  ContentTemplate="{DataTemplate pages:DietTypePage}" />
+
+    <ShellContent Route="SustainableCommutePage"
+                  ContentTemplate="{DataTemplate pages:SustainableCommutePage}" />
+
+    <ShellContent Route="FlightHoursPage"
+                  ContentTemplate="{DataTemplate pages:FlightHoursPage}" />
     <TabBar>
         <!--<ShellContent Title ="Home" Icon="settings.svg" Route="mainPage" ContentTemplate="{DataTemplate pages:MainPage}" />-->
         <ShellContent Title ="Home" Icon="settings.svg" Route="DietTypePage" ContentTemplate="{DataTemplate pages:DietTypePage}"/>
@@ -19,5 +27,7 @@
         <ShellContent Title="Reduce" Icon="reduce.svg" Route="reducePage" ContentTemplate="{DataTemplate pages:ReducePage}" />
         <ShellContent Title="Offset" Icon="offset.svg" Route="offsetPage" ContentTemplate="{DataTemplate pages:OffsetPage}" />
     </TabBar>
+    
+    
 
 </Shell>

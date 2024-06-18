@@ -1,4 +1,6 @@
-﻿namespace MRQ
+﻿using MRQ.Pages;
+
+namespace MRQ
 {
     public partial class AppShell : Shell
     {
@@ -6,6 +8,7 @@
         {
             InitializeComponent();
             Shell.SetNavBarIsVisible(this, true);
+
         }
     }
 }
