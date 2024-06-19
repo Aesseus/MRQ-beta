@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 
+
+
 namespace MRQ.ViewModels
 {
     public partial class DietTypeViewModel : ObservableObject
@@ -27,7 +29,7 @@ namespace MRQ.ViewModels
         };
 
         [RelayCommand]
-        private async Task NextCommand() 
+        public async Task NextCommand() 
         {
             try 
             {

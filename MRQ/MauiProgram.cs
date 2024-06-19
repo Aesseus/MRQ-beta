@@ -2,6 +2,7 @@
 using Microcharts.Maui;
 using MRQ.Pages;
 using MRQ.ViewModels;
+using CommunityToolkit.Maui;
 
 namespace MRQ
 {
@@ -12,6 +13,7 @@ namespace MRQ
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .UseMicrocharts()
                 .ConfigureFonts(fonts =>
                 {
