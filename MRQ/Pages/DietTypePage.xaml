@@ -35,7 +35,7 @@
         <Button Grid.Row="2"
                 Text="Next"
                 FontFamily="Roboto"
-                Command="{Binding NextCommand}"
+                Command="{Binding NextCommandExecute}"
                 BackgroundColor="{StaticResource Secondary}"
                 TextColor="White"
                 FontSize="18"

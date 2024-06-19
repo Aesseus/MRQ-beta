@@ -2,6 +2,8 @@
 using Microcharts.Maui;
 using MRQ.Pages;
 using MRQ.ViewModels;
+using MRQ.Services;
+
 
 namespace MRQ
 {
@@ -20,6 +22,10 @@ namespace MRQ
                     fonts.AddFont("Roboto-Regular.ttf", "Roboto");
                     fonts.AddFont("Roboto-Bold.ttf", "RobotoBold");
                 });
+            // Register Interfaces for DI
+            builder.Services.AddSingleton<INavigationService, NavigationService>();
+            // ViewModel DI
+
             // Register your pages and view models
             builder.Services.AddSingleton<DietTypePage>();
             builder.Services.AddSingleton<DietTypeViewModel>();

@@ -3,21 +3,26 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using MRQ.Services;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-
 namespace MRQ.ViewModels
 {
-    public partial class DietTypeViewModel : ObservableObject
+    public partial class DietTypeViewModel : BaseViewModel
     {
-        [ObservableProperty]
-        private string selectedDietType = string.Empty;
+        private readonly INavigationService _navigationService;
 
-        [ObservableProperty]
-        private ObservableCollection<string> dietTypes = new ObservableCollection<string>
+        private string _selectedDietType = string.Empty;
+        public string SelectedDietType
+        {
+            get => _selectedDietType;
+            set => SetProperty(ref _selectedDietType, value);
+        }
+
+        private ObservableCollection<string> _dietTypes = new ObservableCollection<string>
         {
             "Vegan",
             "Vegetarian",
@@ -25,24 +30,32 @@ namespace MRQ.ViewModels
             "Pescatarian",
             "Omnivorous"
         };
-
-        [RelayCommand]
-        private async Task NextCommand() 
+        public ObservableCollection<string> DietTypes
         {
-            try 
+            get => _dietTypes;
+            set => SetProperty(ref _dietTypes, value);
+        }
+
+        public ICommand NextCommand { get; }
+
+        public DietTypeViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+            NextCommand = new Command(async () => await NextCommandExecute());
+        }
+
+        private async Task NextCommandExecute()
+        {
+            try
             {
                 Debug.WriteLine("NextCommand Executed");
                 // Navigate to the SustainableCommutePage
-                await Shell.Current.GoToAsync(nameof(SustainableCommutePage));
+                await _navigationService.NavigateToAsync(nameof(SustainableCommutePage));
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Debug.WriteLine($"Navigation failed: {ex.Message}");
             }
         }
-
-        // ... Rest of the code ...
-
     }
 }
-

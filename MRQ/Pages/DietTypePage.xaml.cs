@@ -1,12 +1,13 @@
 using MRQ.ViewModels;
 
-namespace MRQ.Pages;
-
-public partial class DietTypePage : ContentPage
+namespace MRQ.Pages
 {
-	public DietTypePage()
+	public partial class DietTypePage : ContentPage
 	{
-		InitializeComponent();
-		BindingContext = new DietTypeViewModel();
+		public DietTypePage(DietTypeViewModel viewModel)
+		{
+			InitializeComponent();
+			BindingContext = viewModel;
+		}
 	}
 }
