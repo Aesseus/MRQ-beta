@@ -18,8 +18,7 @@ namespace MRQ.ViewModels
         [ObservableProperty]
         private string selectedDietType = string.Empty;
 
-        [ObservableProperty]
-        private ObservableCollection<string> dietTypes = new ObservableCollection<string>
+        public ObservableCollection<string> DietTypes { get; } = new ObservableCollection<string> 
         {
             "Vegan",
             "Vegetarian",
@@ -29,11 +28,11 @@ namespace MRQ.ViewModels
         };
 
         [RelayCommand]
-        public async Task NextCommand() 
+        private async Task Next() 
         {
             try 
             {
-                Debug.WriteLine("NextCommand Executed");
+               Debug.WriteLine("NextCommand Executed");
                 // Navigate to the SustainableCommutePage
                 await Shell.Current.GoToAsync(nameof(SustainableCommutePage));
             }
